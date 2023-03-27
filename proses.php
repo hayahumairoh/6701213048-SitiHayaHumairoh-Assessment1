@@ -1,22 +1,29 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
   $angka1 = $_POST['num1'];
-  $angka2 = $_POST['num2'];
   $operator = $_POST['dropdown'];
+  $angka2 = $_POST['num2'];
 
-
-  if ($operator == '+') {
-    $hasil = $num1 + $num2;
-  } else if ($dropdown == '-') {
-    $hasil = $num1 - $num2;
-  } else if ($dropdown == '*') {
-    $hasil = $num1 * $num2;
-  } else if ($dropdown == '/') {
-    $hasil = $num1 / $num2;
+  // proses operasi aritmatika
+  switch ($dropdown) {
+    case '+':
+      $hasil = $num1 + $num2;
+      break;
+    case '-':
+      $hasil = $num1 - $num2;
+      break;
+    case '*':
+      $hasil = $num1 * $num2;
+      break;
+    case '/':
+      $hasil = $num1 / $num2;
+      break;
+    default:
+      echo "dropdown tidak valid";
+      exit;
   }
 
-
-  echo "Hasil operasi " . $num1 . " " . $dropdown . " " . $angka2 . " adalah " . $hasil;
+  // tampilkan hasil
+  echo "hasil: " . $hasil;
 }
 ?>
