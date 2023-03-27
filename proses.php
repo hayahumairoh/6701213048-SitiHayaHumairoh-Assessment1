@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hasil = $num1 / $num2;
   }
 
-
+//tampilan akhir tadi ada salah
   echo "Hasil operasi " . $num1 . " " . $dropdown . " " . $angka2 . " adalah " . $hasil;
 }
 ?>
